@@ -1,7 +1,7 @@
 # WPCollab Plugin Skeleton
-__@todo short description__
-
 [![Gitter chat](https://badges.gitter.im/WPCollab.png)](https://gitter.im/WPCollab)
+
+@todo short description
 
 [WPCollab.co][1.1] | [Discussion (P2)][1.2] | [GitHub repo][1.3] | [Issues][1.4]
 
@@ -10,13 +10,18 @@ __@todo short description__
 [1.3]: https://github.com/WPCollab/wpcollab-plugin-skeleton
 [1.4]: https://github.com/WPCollab/wpcollab-plugin-skeleton/issues
 
+- Current stable release: __[0.1.0][1.5]__
+- Current dev version: __[develop][1.6]__
+
+[1.5]: #https://github.com/WPCollab/wpcollab-plugin-skeleton/archive/v0.1.0.zip
+[1.6]: https://github.com/WPCollab/wpcollab-plugin-skeleton/archive/develop.zip
 
 ### Description
-@ long description
+@todo long description
 
 
 ## Usage
-
+@todo usage guide
 
 ## License
 __[GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)__

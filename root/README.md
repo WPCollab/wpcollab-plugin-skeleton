@@ -2,26 +2,26 @@
 [![Gitter chat](https://badges.gitter.im/WPCollab/{%= slug %}.png)](https://gitter.im/WPCollab/{%= slug %})
 [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/WPCollab/{%= slug %}/badges/quality-score.png?s=@todo)](https://scrutinizer-ci.com/g/WPCollab/{%= slug %}/)
 
-__@todo short description __
+@todo short description
 
 [Homepage][1.1] | [WordPress.org][1.2]
 
 | WordPress					| Version			| *		| Development				|					|
 | ----:						| :----				| :---: | :----						| :----				|
-| Requires at least:		| __3.1__			| *		| [GitHub-Repository][1.3]	| [Translate][1.6]	|
-| Tested up to:				| __3.6__			| *		| [Issue-Tracker][1.4]		|					|
-| Current stable release:	| __[TBD][1.5]__	| *		| Current dev version:		| [0.1-alpha][1.7]	|
+| Requires at least:		| __@todo__			| *		| [GitHub-Repository][1.3]	| [Translate][1.6]	|
+| Tested up to:				| __@todo__			| *		| [Issue-Tracker][1.4]		|					|
+| Current stable release:	| __[TBD][1.5]__	| *		| Current dev version:		| [develop][1.7]	|
 
 [1.1]: {%= github_repo %}
 [1.2]: #@todo
 [1.3]: {%= github_repo %}
 [1.4]: {%= github_repo %}/issues
-[1.5]: #{%= github_repo %}/tree/1.0
+[1.5]: #{%= github_repo %}/archive/tag.zip
 [1.6]: #http://wp-translate.org/projects/{%= slug %}
-[1.7]: {%= github_repo %}/archive/master.zip
+[1.7]: {%= github_repo %}/archive/develop.zip
 
 ### Description
-@ long description
+@todo long description
 
 
 ## License
