@@ -29,14 +29,14 @@ GitHub Plugin URI: {%= github_repo %}
 	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 /**
- * @author		{%= dev_long %}
- * @copyright	Copyright (c) 2014, {%= dev_long %}
- * @license		http://www.gnu.org/licenses/gpl-2.0.html GPLv2
- * @package		{%= dev %}\{%= title_camel_uppercase %}
- * @version		0.1-alpha
+ * @author {%= dev_long %}
+ * @copyright Copyright (c) 2014, {%= dev_long %}
+ * @license http://www.gnu.org/licenses/gpl-2.0.html GPLv2
+ * @package {%= dev %}\{%= title_camel_uppercase %}
+ * @version 0.1-alpha
  */
 
-//avoid direct calls to this file
+// avoid direct calls to this file
 if ( !defined( 'ABSPATH' ) ) {
 	header( 'Status: 403 Forbidden' );
 	header( 'HTTP/1.1 403 Forbidden' );
@@ -49,50 +49,50 @@ spl_autoload_register( '{%= dev %}_{%= title_camel_uppercase %}::autoload' );
 /**
  * Main class to run the plugin
  *
- * @since	1.0.0
+ * @since 1.0.0
  */
 class {%= dev %}_{%= title_camel_uppercase %} {
 
 	/**
 	 * Holds a copy of the object for easy reference.
 	 *
-	 * @since	1.0.0
+	 * @since 1.0.0
 	 * @static
-	 * @access	private
-	 * @var		object	$instance
+	 * @access private
+	 * @var object $instance
 	 */
 	private static $instance;
 
 	/**
 	 * Current version of the plugin.
 	 *
-	 * @since	1.0.0
+	 * @since 1.0.0
 	 * @static
-	 * @access	public
-	 * @var		string	$version
+	 * @access public
+	 * @var string $version
 	 */
 	public static $version = '0.1-alpha';
 
 	/**
 	 * Holds a copy of the main plugin filepath.
 	 *
-	 * @since	1.0.0
-	 * @access	private
-	 * @var		string	$file
+	 * @since 1.0.0
+	 * @access private
+	 * @var string $file
 	 */
 	private static $file = __FILE__;
 
 	/**
 	 * Constructor. Hooks all interactions to initialize the class.
 	 *
-	 * @since	1.0.0
-	 * @access	public
+	 * @since 1.0.0
+	 * @access public
 	 *
 	 * @see	add_action()
 	 * @see	register_activation_hook()
 	 * @see	register_deactivation_hook()
 	 *
-	 * @return	void
+	 * @return void
 	 */
 	public function __construct() {
 
@@ -118,12 +118,12 @@ class {%= dev %}_{%= title_camel_uppercase %} {
 	/**
 	 * @todo
 	 *
-	 * @since	1.0.0
-	 * @access	public
+	 * @since 1.0.0
+	 * @access public
 	 *
-	 * @see		apply_filters()
+	 * @see apply_filters()
 	 *
-	 * @return	array
+	 * @return array
 	 */
 	public function get_defaults() {
 
@@ -137,12 +137,12 @@ class {%= dev %}_{%= title_camel_uppercase %} {
 	/**
 	 * PSR-0 compliant autoloader to load classes as needed.
 	 *
-	 * @since	1.0.0
+	 * @since 1.0.0
 	 * @static
-	 * @access	public
+	 * @access public
 	 *
-	 * @param	string	$classname	The name of the class
-	 * @return	null	Return early if the class name does not start with the correct prefix
+	 * @param string $classname The name of the class
+	 * @return null Return early if the class name does not start with the correct prefix
 	 */
 	public static function autoload( $classname ) {
 
@@ -161,11 +161,11 @@ class {%= dev %}_{%= title_camel_uppercase %} {
 	/**
 	 * Getter method for retrieving the object instance.
 	 *
-	 * @since	1.0.0
+	 * @since 1.0.0
 	 * @static
-	 * @access	public
+	 * @access public
 	 *
-	 * @return	object	{%= dev %}_{%= title_camel_uppercase %}::$instance
+	 * @return object {%= dev %}_{%= title_camel_uppercase %}::$instance
 	 */
 	public static function get_instance() {
 
@@ -176,11 +176,11 @@ class {%= dev %}_{%= title_camel_uppercase %} {
 	/**
 	 * Getter method for retrieving the main plugin filepath.
 	 *
-	 * @since	1.0.0
+	 * @since 1.0.0
 	 * @static
-	 * @access	public
+	 * @access public
 	 *
-	 * @return	string	self::$file
+	 * @return string self::$file
 	 */
 	public static function get_file() {
 
@@ -194,11 +194,11 @@ class {%= dev %}_{%= title_camel_uppercase %} {
 	 * @since	1.0.0
 	 * @access	public
 	 *
-	 * @see		load_plugin_textdomain()
-	 * @see		plugin_basename()
-	 * @action	plugins_loaded
+	 * @see load_plugin_textdomain()
+	 * @see plugin_basename()
+	 * @action plugins_loaded
 	 *
-	 * @return	void
+	 * @return void
 	 */
 	public function load_plugin_textdomain() {
 
@@ -213,13 +213,13 @@ class {%= dev %}_{%= title_camel_uppercase %} {
 	/**
 	 * Fired when plugin is activated
 	 *
-	 * @since	1.0.0
-	 * @access	public
+	 * @since 1.0.0
+	 * @access public
 	 *
-	 * @action	register_activation_hook
+	 * @action register_activation_hook
 	 *
-	 * @param	bool	$network_wide TRUE if WPMU 'super admin' uses Network Activate option
-	 * @return	void
+	 * @param bool $network_wide TRUE if WPMU 'super admin' uses Network Activate option
+	 * @return void
 	 */
 	public function activate_plugin( $network_wide ) {
 
@@ -249,13 +249,13 @@ class {%= dev %}_{%= title_camel_uppercase %} {
 	/**
 	 * Fired when plugin is adectivated
 	 *
-	 * @since	1.0.0
-	 * @access	public
+	 * @since 1.0.0
+	 * @access public
 	 *
-	 * @action	register_deactivation_hook
+	 * @action register_deactivation_hook
 	 *
-	 * @param	bool	$network_wide TRUE if WPMU 'super admin' uses Network Activate option
-	 * @return	void
+	 * @param bool $network_wide TRUE if WPMU 'super admin' uses Network Activate option
+	 * @return void
 	 */
 	public function deactivate_plugin( $network_wide ) {
 
@@ -266,11 +266,11 @@ class {%= dev %}_{%= title_camel_uppercase %} {
 /**
  * Instantiate the main class
  *
- * @since	1.0.0
- * @access	public
+ * @since 1.0.0
+ * @access public
  *
- * @global	object ${%= dev_lowercase %}_{%= title_camel_lowercase %}
- * @var	object	${%= dev_lowercase %}_helloemoji holds the instantiated class {@uses {%= dev %}_{%= title_camel_uppercase %}}
+ * @global object ${%= dev_lowercase %}_{%= title_camel_lowercase %}
+ * @var object ${%= dev_lowercase %}_%= title_camel_lowercase %} holds the instantiated class {@uses {%= dev %}_{%= title_camel_uppercase %}}
  */
 global ${%= dev_lowercase %}_{%= title_camel_lowercase %};
 ${%= dev_lowercase %}_{%= title_camel_lowercase %} = new {%= dev %}_{%= title_camel_uppercase %}();

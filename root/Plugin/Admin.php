@@ -1,12 +1,12 @@
 <?php
 /**
- * @author		{%= dev_long %}
- * @copyright	Copyright (c) 2014, {%= dev_long %}
- * @license		http://www.gnu.org/licenses/gpl-2.0.html GPLv2
- * @package		{%= dev %}\{%= title_camel_uppercase %}\Admin
+ * @author {%= dev_long %}
+ * @copyright Copyright (c) 2014, {%= dev_long %}
+ * @license http://www.gnu.org/licenses/gpl-2.0.html GPLv2
+ * @package {%= dev %}\{%= title_camel_uppercase %}\Admin
  */
 
-//avoid direct calls to this file
+// avoid direct calls to this file
 if ( !defined( 'ABSPATH' ) ) {
 	header( 'Status: 403 Forbidden' );
 	header( 'HTTP/1.1 403 Forbidden' );
@@ -16,28 +16,28 @@ if ( !defined( 'ABSPATH' ) ) {
 /**
  * @todo Description
  *
- * @since	1.0.0
+ * @since 1.0.0
  */
 class {%= dev %}_{%= title_camel_uppercase %}_Admin {
 
 	/**
 	 * Holds a copy of the object for easy reference.
 	 *
-	 * @since	1.0.0
+	 * @since 1.0.0
 	 * @static
-	 * @access	private
-	 * @var		object	$instance
+	 * @access private
+	 * @var object $instance
 	 */
 	private static $instance;
 
 	/**
 	 * Getter method for retrieving the object instance.
 	 *
-	 * @since	1.0.0
+	 * @since 1.0.0
 	 * @static
-	 * @access	public
+	 * @access public
 	 *
-	 * @return	object	{%= dev %}_{%= title_camel_uppercase %}_Admin::$instance
+	 * @return object {%= dev %}_{%= title_camel_uppercase %}_Admin::$instance
 	 */
 	public static function get_instance() {
 
@@ -48,10 +48,10 @@ class {%= dev %}_{%= title_camel_uppercase %}_Admin {
 	/**
 	 * Constructor. Hooks all interactions to initialize the class.
 	 *
-	 * @since	1.0.0
-	 * @access	public
+	 * @since 1.0.0
+	 * @access public
 	 *
-	 * @return	void
+	 * @return void
 	 */
 	public function __construct() {
 
@@ -69,17 +69,17 @@ class {%= dev %}_{%= title_camel_uppercase %}_Admin {
 	/**
 	 * Register and enqueue admin-specific JavaScript.
 	 *
-	 * @since   1.0.0
-	 * @access  public
+	 * @since 1.0.0
+	 * @access public
 	 *
-	 * @see	apply_filters()
+	 * @see apply_filters()
 	 * @see WP_DEBUG
-	 * @see	wp_enqueue_script()
+	 * @see wp_enqueue_script()
 	 * @see wp_enqueue_style()
 	 * @see plugins_url()
 	 *
 	 * @param string $hook
-	 * @return  void
+	 * @return void
 	 */
 	public function enqueue_admin_scripts( $hook ) {
 
@@ -94,11 +94,11 @@ class {%= dev %}_{%= title_camel_uppercase %}_Admin {
 	/**
 	 * @todo
 	 *
-	 * @since   1.0.0
-	 * @access  public
+	 * @since 1.0.0
+	 * @access public
 	 *
-	 * @param	array	$links
-	 * @return  array
+	 * @param array $links
+	 * @return array
 	 */
 	public function add_action_links( $links ) {
 
