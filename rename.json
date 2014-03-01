@@ -1,5 +1,5 @@
 {
 	"plugin-name.php": "{%= slug %}.php",
 	"languages/plugin-name.pot": "languages/{%= slug %}.pot",
-	"Plugin/*": "{%= title_camel_uppercase %}/*"
+	"Plugin/*": "{%= title_camel_capital %}/*"
 }

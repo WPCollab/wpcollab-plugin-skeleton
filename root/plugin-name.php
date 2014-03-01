@@ -32,7 +32,7 @@ GitHub Plugin URI: {%= github_repo %}
  * @author {%= dev_long %}
  * @copyright Copyright (c) 2014, {%= dev_long %}
  * @license http://www.gnu.org/licenses/gpl-2.0.html GPLv2
- * @package {%= dev %}\{%= title_camel_uppercase %}
+ * @package {%= dev %}\{%= title_camel_capital %}
  * @version 0.1-alpha
  */
 
@@ -51,7 +51,7 @@ spl_autoload_register( '{%= dev %}_{%= title_camel_uppercase %}::autoload' );
  *
  * @since 1.0.0
  */
-class {%= dev %}_{%= title_camel_uppercase %} {
+class {%= dev %}_{%= title_camel_capital %} {
 
 	/**
 	 * Holds a copy of the object for easy reference.
@@ -100,18 +100,18 @@ class {%= dev %}_{%= title_camel_uppercase %} {
 
 		if ( is_admin() ) {
 
-			new {%= dev %}_{%= title_camel_uppercase %}_Admin();
+			new {%= dev %}_{%= title_camel_capital %}_Admin();
 
 		} elseif ( !is_admin() ) {
 
-			new {%= dev %}_{%= title_camel_uppercase %}_Frontend();
+			new {%= dev %}_{%= title_camel_capital %}_Frontend();
 
 		}
 
 		add_action( 'plugins_loaded', array( $this, 'load_plugin_textdomain' ) );
 
-		register_activation_hook( __FILE__, array( '{%= dev %}_{%= title_camel_uppercase %}', 'activate_plugin' ) );
-		register_deactivation_hook( __FILE__, array( '{%= dev %}_{%= title_camel_uppercase %}', 'deactivate_plugin' ) );
+		register_activation_hook( __FILE__, array( '{%= dev %}_{%= title_camel_capital %}', 'activate_plugin' ) );
+		register_deactivation_hook( __FILE__, array( '{%= dev %}_{%= title_camel_capital %}', 'deactivate_plugin' ) );
 
 	} // END __construct()
 
@@ -129,7 +129,7 @@ class {%= dev %}_{%= title_camel_uppercase %} {
 
 		$defaults = array();
 
-		$options = apply_filters( '{%= dev_lowercase %}_{%= title_underscores %}_defaults', $defaults );
+		$options = apply_filters( '{%= dev_lowercase %}_{%= title_camel_lowercase %}_defaults', $defaults );
 
 		return $options;
 	}
@@ -146,10 +146,11 @@ class {%= dev %}_{%= title_camel_uppercase %} {
 	 */
 	public static function autoload( $classname ) {
 
-		if ( '@todo' !== mb_substr( $classname, 0, 3 ) ) {
+		if ( '{%= dev %}_{%= title_camel_capital %}_' !== mb_substr( $classname, 0, 3 ) ) { // @todo count of '{%= dev %}_{%= title_camel_capital %}_'
 			return;
 		}
 
+		$class = substr( $classname, 4 ); // @todo count of '{%= dev %}_'
 		$filename = dirname( __FILE__ ) . DIRECTORY_SEPARATOR . str_replace( '_', DIRECTORY_SEPARATOR, $classname ) . '.php';
 
 		if ( file_exists( $filename ) ) {
@@ -165,7 +166,7 @@ class {%= dev %}_{%= title_camel_uppercase %} {
 	 * @static
 	 * @access public
 	 *
-	 * @return object {%= dev %}_{%= title_camel_uppercase %}::$instance
+	 * @return object {%= dev %}_{%= title_camel_capital %}::$instance
 	 */
 	public static function get_instance() {
 
@@ -233,14 +234,14 @@ class {%= dev %}_{%= title_camel_uppercase %} {
 			if ( $blogs ) {
 				foreach( $blogs as $blog ) {
 					switch_to_blog( $blog['blog_id'] );
-					add_option( '{%= dev_lowercase %}_{%= title_underscores %}_settings', $defaults );
+					add_option( '{%= dev_lowercase %}_{%= title_camel_lowercase %}_settings', $defaults );
 				}
 				restore_current_blog();
 			}
 
 		} else {
 
-			add_option( '{%= dev_lowercase %}_{%= title_underscores %}_settings', $defaults );
+			add_option( '{%= dev_lowercase %}_{%= title_camel_lowercase %}_settings', $defaults );
 
 		}
 
@@ -261,7 +262,7 @@ class {%= dev %}_{%= title_camel_uppercase %} {
 
 	} // END deactivate_plugin()
 
-} // END class {%= dev %}_{%= title_camel_uppercase %}
+} // END class {%= dev %}_{%= title_camel_capital %}
 
 /**
  * Instantiate the main class
@@ -270,7 +271,7 @@ class {%= dev %}_{%= title_camel_uppercase %} {
  * @access public
  *
  * @global object ${%= dev_lowercase %}_{%= title_camel_lowercase %}
- * @var object ${%= dev_lowercase %}_%= title_camel_lowercase %} holds the instantiated class {@uses {%= dev %}_{%= title_camel_uppercase %}}
+ * @var object ${%= dev_lowercase %}_%= title_camel_lowercase %} holds the instantiated class {@uses {%= dev %}_{%= title_camel_capital %}}
  */
 global ${%= dev_lowercase %}_{%= title_camel_lowercase %};
-${%= dev_lowercase %}_{%= title_camel_lowercase %} = new {%= dev %}_{%= title_camel_uppercase %}();
+${%= dev_lowercase %}_{%= title_camel_lowercase %} = new {%= dev %}_{%= title_camel_capital %}();

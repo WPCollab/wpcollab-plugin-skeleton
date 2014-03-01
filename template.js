@@ -11,10 +11,6 @@
 /**
  * @todo STRINGS
  *
- * dev = 'WPCollab'
- * dev_long = '%dev Team'
- * dev_lowercase = %dev + make lowercase
- *
  * title
  *	title_underscores = %title + make spaces into underscores
  *	title_camel_capital = %title + remove spaces
@@ -27,11 +23,6 @@
  */
 
 'use strict';
-
-var internalVariables = {
-	dev: 'WPCollab',
-	dev_long: 'WPCollab Team'
-};
 
 // Basic template description
 // @todo exports.description = 'Create a ' %dev ' plugin skeleton!'; // @todo how to do this?
@@ -49,8 +40,8 @@ exports.template =
 			{},
 			[
 				// Prompt for these values.
-				init.prompt('title', 'Plugin title'),
-				init.prompt('slug', 'Plugin slug / textdomain (no spaces)'),
+				init.prompt('title', 'Plugin Title'),
+				init.prompt('slug', 'plugin-slug'),
 				init.prompt('description', 'An awesome plugin that does awesome things'),
 				{
 					name: 'version',
@@ -58,17 +49,14 @@ exports.template =
 					default: '0.0.1'
 				},
 				init.prompt('homepage', 'http://wordpress.org/plugins'),
-//				init.prompt('author_name'),
-//				init.prompt('author_email'),
+				init.prompt('dev', 'WPCollab'),
+				init.prompt('dev_long', 'WPCollab Team'),
 //				init.prompt('author_url'),
 				init.prompt('github_repo')
 			],
 			function(err, props) {
 
-				props.dev = internalVariables.dev;
-				props.dev_long = internalVariables.dev_long;
 				props.dev_lowercase = props.dev.toLowerCase();
-
 				props.title_underscores = props.title.replace(/[\W_]+/g, '_');
 				props.title_camel_capital = props.title.replace(/[\W_]+/g, ''); // @todo working?
 				props.title_camel_lowercase = ( props.title.replace(/[\W_]+/g, '_') ).toLowerCase(); // @todo lowercase-ing - Is this right?

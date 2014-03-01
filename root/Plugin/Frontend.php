@@ -3,7 +3,7 @@
  * @author {%= dev_long %}
  * @copyright Copyright (c) 2014, {%= dev_long %}
  * @license	 http://www.gnu.org/licenses/gpl-2.0.html GPLv2
- * @package {%= dev %}\{%= title_camel_uppercase %}\Frontend
+ * @package {%= dev %}\{%= title_camel_capital %}\Frontend
  */
 
 // avoid direct calls to this file
@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-class {%= dev %}_{%= title_camel_uppercase %}_Frontend {
+class {%= dev %}_{%= title_camel_capital %}_Frontend {
 
 	/**
 	 * Holds a copy of the object for easy reference.
@@ -37,7 +37,7 @@ class {%= dev %}_{%= title_camel_uppercase %}_Frontend {
 	 * @static
 	 * @access public
 	 *
-	 * @return object {%= dev %}_{%= title_camel_uppercase %}_Frontend::$instance
+	 * @return object {%= dev %}_{%= title_camel_capital %}_Frontend::$instance
 	 */
 	public static function get_instance() {
 
@@ -59,4 +59,4 @@ class {%= dev %}_{%= title_camel_uppercase %}_Frontend {
 
 	} // END __construct()
 
-} // END class {%= dev %}_{%= title_camel_uppercase %}_Frontend
+} // END class {%= dev %}_{%= title_camel_capital %}_Frontend

@@ -3,7 +3,7 @@
  * @author {%= dev_long %}
  * @copyright Copyright (c) 2014, {%= dev_long %}
  * @license http://www.gnu.org/licenses/gpl-2.0.html GPLv2
- * @package {%= dev %}\{%= title_camel_uppercase %}\Admin
+ * @package {%= dev %}\{%= title_camel_capital %}\Admin
  */
 
 // avoid direct calls to this file
@@ -18,7 +18,7 @@ if ( !defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-class {%= dev %}_{%= title_camel_uppercase %}_Admin {
+class {%= dev %}_{%= title_camel_capital %}_Admin {
 
 	/**
 	 * Holds a copy of the object for easy reference.
@@ -37,7 +37,7 @@ class {%= dev %}_{%= title_camel_uppercase %}_Admin {
 	 * @static
 	 * @access public
 	 *
-	 * @return object {%= dev %}_{%= title_camel_uppercase %}_Admin::$instance
+	 * @return object {%= dev %}_{%= title_camel_capital %}_Admin::$instance
 	 */
 	public static function get_instance() {
 
@@ -61,7 +61,7 @@ class {%= dev %}_{%= title_camel_uppercase %}_Admin {
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_scripts' ) );
 
 		/** Add an action link pointing to the options page. */
-		$plugin_basename = plugin_basename( plugin_dir_path( {%= dev %}_{%= title_camel_uppercase %}::get_file() ) . '{%= slug %}.php' );
+		$plugin_basename = plugin_basename( plugin_dir_path( {%= dev %}_{%= title_camel_capital %}::get_file() ) . '{%= slug %}.php' );
 		add_filter( 'plugin_action_links_' . $plugin_basename, array( $this, 'add_action_links' ) );
 
 	} // END __construct()
@@ -85,9 +85,9 @@ class {%= dev %}_{%= title_camel_uppercase %}_Admin {
 
 		$dev = apply_filters( 'wpcollab_{%= title_underscores %}_debug_mode', WP_DEBUG ) ? '' : '.min';
 
-		wp_enqueue_script( '{%= slug %}-admin-script', plugins_url( "js/admin{$dev}.js", {%= dev %}_{%= title_camel_uppercase %}::get_file() ), array(), {%= dev %}_{%= title_camel_uppercase %}::$version, true );
+		wp_enqueue_script( '{%= slug %}-admin-script', plugins_url( "js/admin{$dev}.js", {%= dev %}_{%= title_camel_capital %}::get_file() ), array(), {%= dev %}_{%= title_camel_capital %}::$version, true );
 
-		wp_enqueue_style( '{%= slug %}-admin-style', plugins_url( "css/admin{$dev}.css", {%= dev %}_{%= title_camel_uppercase %}::get_file() ), array(), {%= dev %}_{%= title_camel_uppercase %}::$version );
+		wp_enqueue_style( '{%= slug %}-admin-style', plugins_url( "css/admin{$dev}.css", {%= dev %}_{%= title_camel_capital %}::get_file() ), array(), {%= dev %}_{%= title_camel_capital %}::$version );
 
 	} // END enqueue_admin_scripts()
 
@@ -113,4 +113,4 @@ class {%= dev %}_{%= title_camel_uppercase %}_Admin {
 
 	} // END add_action_links()
 
-} // END class {%= dev %}_{%= title_camel_uppercase %}_Admin
+} // END class {%= dev %}_{%= title_camel_capital %}_Admin
