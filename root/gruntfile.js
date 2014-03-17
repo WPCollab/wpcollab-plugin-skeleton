@@ -30,6 +30,14 @@ module.exports = function (grunt) {
 				}
 			}
 		},
+		makepot: {
+			options: {
+				exclude: [ 'node_modules/**' ],
+				mainFile: 'uber-media.php',
+				potFilename: 'media-manager-plus.pot',
+				type: 'wp-plugin'
+			}
+		},
 		watch: {
 			js:  {
 				files: 'js/*.js',
@@ -46,6 +54,7 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-sass');
+	grunt.loadNpmTasks('grunt-wp-i18n');
 
 // register at least this one task
 	grunt.registerTask('default', [ 'watch' ]);
